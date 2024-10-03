@@ -37,6 +37,7 @@ symptom_input = st.text_input("Enter a symptom:")
 if st.button("Search"):
     if symptom_input:
         # Query the Neo4j database
+        symptom_input =symptom_input.lower()
         results = db.get_disease_info(symptom_input)
         
         if results:
